@@ -1,7 +1,12 @@
 <div class="container">
     <div class="row">
-        
-        <div *ngFor="let pokemon of pokemons" class="col m4 s12" >
+        <app-search-pokemon></app-search-pokemon>
+        <div class="center">
+          <app-loader *ngIf="!pokemons"></app-loader>
+
+        </div>
+
+        <div  *ngFor="let pokemon of pokemons" class="col m4 s12" >
             
             <div (click)="goToDetail(pokemon)" class="card horizontal" pkmnBorderCard="red" >
               <div class="card-image">
